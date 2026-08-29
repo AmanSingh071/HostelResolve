@@ -12,7 +12,8 @@ const priorityFor=(category:string)=>["Security issue","Electrical issue"].inclu
 const day=(v:string)=>new Date(v).toLocaleDateString("en-CA");
 
 export default function Home(){
- const [view,setView]=useState<View>("home"),[grievances,setGrievances]=useState<Grievance[]>([]);\n const [portal,setPortal]=useState<"student"|"worker"|null>(null);
+ const [view,setView]=useState<View>("home"),[grievances,setGrievances]=useState<Grievance[]>([]);
+ const [portal,setPortal]=useState<"student"|"worker"|null>(null);
  const [block,setBlock]=useState("A"),[floor,setFloor]=useState("Ground"),[room,setRoom]=useState("1"),[category,setCategory]=useState(categories[0]),[search,setSearch]=useState(""),[subject,setSubject]=useState(""),[description,setDescription]=useState(""),[notice,setNotice]=useState(""),[loading,setLoading]=useState(false);
  const [user,setUser]=useState<{id:string;email:string;name:string}|null>(null);
  const [worker,setWorker]=useState<{id:string;name:string}|null>(null),[workerId,setWorkerId]=useState(""),[workerPin,setWorkerPin]=useState("");
