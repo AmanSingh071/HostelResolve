@@ -9,3 +9,19 @@
 
 
 .student-metrics{margin:-4px 0 22px}.worker-auth-form{display:grid;gap:14px}.primary:disabled{opacity:.65;cursor:not-allowed}.job-main{min-width:0}@media(max-width:720px){.student-metrics{grid-template-columns:1fr 1fr}.navlinks{gap:2px}.navlinks button{font-size:12px}}
+
+/* Portal separation + professional polish */
+.nav.portal-student .brand span{box-shadow:0 0 0 4px rgba(41,128,92,.12)}
+.nav.portal-worker .brand span{box-shadow:0 0 0 4px rgba(38,92,140,.12)}
+.portal-home{border-bottom:1px solid var(--line)}
+.page-head{gap:18px;align-items:flex-end}
+.page-head h2{letter-spacing:-.04em}
+.metrics{border-radius:18px}
+.metric{position:relative;overflow:hidden}
+.metric:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--ink);opacity:.12}
+.form-card{box-shadow:0 18px 50px rgba(22,34,27,.06)}
+.report,.job{transition:transform .16s ease,box-shadow .16s ease}
+.report:hover,.job:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(22,34,27,.07)}
+.empty{min-height:150px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:16px}
+.notice{position:sticky;top:10px;z-index:20;box-shadow:0 12px 30px rgba(0,0,0,.08)}
+.navlinks button:not(.worker-login){white-space:nowrap}
