@@ -1,0 +1,1 @@
+import{NextRequest,NextResponse}from"next/server";import{verifyAdmin}from"../../../../lib/admin-session";export async function GET(r:NextRequest){const admin=verifyAdmin(r.cookies.get("hostelresolve_admin")?.value);return admin?NextResponse.json({admin}):NextResponse.json({admin:null},{status:401})}
