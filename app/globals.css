@@ -134,3 +134,23 @@ button{line-height:1.2}
 .evidence a{width:132px;height:96px;border-radius:10px;overflow:hidden;border:1px solid var(--line);display:block}
 .evidence a:hover{transform:translateY(-2px)}
 @media(max-width:720px){.photo-thumb{width:calc(50% - 5px);height:110px}.evidence a{width:calc(50% - 5px);height:120px}.photo-picker{width:100%}}
+
+
+/* Theme toggle */
+.theme-toggle{width:40px;height:40px;min-width:40px;border:1px solid var(--line);border-radius:11px;background:var(--card);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;font-size:17px;padding:0;transition:transform .15s ease,border-color .15s ease}
+.theme-toggle:hover{transform:translateY(-1px);border-color:var(--ink)}
+html[data-theme="dark"]{color-scheme:dark}
+html[data-theme="dark"] body{background:#101512;color:#edf2ed}
+html[data-theme="dark"] .nav{background:#121814;border-color:#29352d}
+html[data-theme="dark"] .page,html[data-theme="dark"] .hero{color:#edf2ed}
+html[data-theme="dark"] .hero{background:#101512}
+html[data-theme="dark"] .form-card,html[data-theme="dark"] .login-card,html[data-theme="dark"] .report,html[data-theme="dark"] .job,html[data-theme="dark"] .metric,html[data-theme="dark"] .empty{background:#171e19;border-color:#2d3931;color:#edf2ed}
+html[data-theme="dark"] input,html[data-theme="dark"] select,html[data-theme="dark"] textarea{background:#111713;color:#edf2ed;border-color:#344139}
+html[data-theme="dark"] option{background:#111713;color:#edf2ed}
+html[data-theme="dark"] .photo-picker{background:#171e19;border-color:#405047;color:#edf2ed}
+html[data-theme="dark"] .theme-toggle{background:#1b241e;border-color:#405047}
+html[data-theme="dark"] .chips button{background:#1b241e;color:#edf2ed;border-color:#3b493f}
+html[data-theme="dark"] .notice{background:#202a23;color:#edf2ed}
+html[data-theme="dark"] .portal{background:#171e19;color:#edf2ed}
+html[data-theme="dark"] .portal small,html[data-theme="dark"] .page p,html[data-theme="dark"] .helper,html[data-theme="dark"] .photo-help{color:#b9c5bc}
+@media(max-width:720px){.theme-toggle{order:-1;width:38px;height:38px;min-width:38px}.brand{flex:1}}
