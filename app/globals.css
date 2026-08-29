@@ -6,3 +6,6 @@
 
 .awaiting-confirmation{background:#eee7ff;color:#6542a6}.awaiting{font-size:12px;font-weight:700;color:#6542a6;background:#eee7ff;padding:8px 10px;border-radius:9px;text-align:center}.filter-toolbar{align-items:center;flex-wrap:wrap}.filter-toolbar select,.filter-toolbar input[type="date"]{width:auto;min-width:145px}.login-card{max-width:520px;margin:35px auto;background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px;display:grid;gap:16px}.login-card h2{font-size:36px}.login-card p,.login-card small{color:var(--muted);line-height:1.55}.back{border:0;background:none;color:var(--muted);font-weight:700;cursor:pointer;text-align:left;padding:6px 0}.empty{background:#fff;border:1px dashed #cfd6cf;border-radius:14px;padding:24px;color:var(--muted)}
 @media(max-width:720px){.filter-toolbar select,.filter-toolbar input[type="date"]{width:100%}}
+
+
+.student-metrics{margin:-4px 0 22px}.worker-auth-form{display:grid;gap:14px}.primary:disabled{opacity:.65;cursor:not-allowed}.job-main{min-width:0}@media(max-width:720px){.student-metrics{grid-template-columns:1fr 1fr}.navlinks{gap:2px}.navlinks button{font-size:12px}}
