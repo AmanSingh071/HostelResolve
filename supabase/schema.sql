@@ -66,3 +66,27 @@ create index if not exists grievances_student_created_idx on public.grievances(s
 create index if not exists grievances_status_created_idx on public.grievances(status,created_at asc);
 
 -- Run this in Supabase SQL Editor before using the new database-backed app.
+
+
+-- Photo evidence support
+alter table public.grievances add column if not exists attachments jsonb not null default '[]'::jsonb;
+
+-- Private bucket: photos are never publicly exposed
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+values ('grievance-photos','grievance-photos',false,5242880,array['image/jpeg','image/png','image/webp'])
+on conflict (id) do update set public=false, file_size_limit=5242880, allowed_mime_types=array['image/jpeg','image/png','image/webp'];
+
+-- Students may upload only inside their own user-id folder
+ drop policy if exists "students upload grievance photos" on storage.objects;
+create policy "students upload grievance photos" on storage.objects for insert to authenticated
+with check (bucket_id='grievance-photos' and (storage.foldername(name))[1]=auth.uid()::text);
+
+drop policy if exists "students read own grievance photos" on storage.objects;
+create policy "students read own grievance photos" on storage.objects for select to authenticated
+using (bucket_id='grievance-photos' and (storage.foldername(name))[1]=auth.uid()::text);
+
+drop policy if exists "students delete own grievance photos" on storage.objects;
+create policy "students delete own grievance photos" on storage.objects for delete to authenticated
+using (bucket_id='grievance-photos' and (storage.foldername(name))[1]=auth.uid()::text);
+
+-- Workers access evidence through the server-side worker API/service role when needed.
